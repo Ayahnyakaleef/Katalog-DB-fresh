@@ -1,321 +1,90 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DB Seller Indonesia - Katalog Produk</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background: #f5f5f5;
-            display: flex;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 480px;
-            width: 100%;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            padding-bottom: 20px;
-        }
-
-        .store-header {
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
-            color: white;
-            padding: 24px 20px;
-            text-align: center;
-        }
-
-        .store-header h1 {
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 6px;
-        }
-
-        .store-header .sub {
-            font-size: 14px;
-            opacity: 0.8;
-        }
-
-        .store-header .info {
-            margin-top: 12px;
-            font-size: 13px;
-            opacity: 0.9;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-        }
-
-        .store-header .info span {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 4px 12px;
-            border-radius: 20px;
-        }
-
-        .section-title {
-            font-size: 18px;
-            font-weight: 700;
-            padding: 20px 20px 10px;
-            color: #1a1a2e;
-        }
-
-        .product-list {
-            padding: 0 16px;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .product-card {
-            background: #fafafa;
-            border-radius: 16px;
-            padding: 16px;
-            border: 1px solid #eee;
-            transition: 0.2s;
-        }
-
-        .product-card:hover {
-            border-color: #1a1a2e;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        }
-
-        .product-name {
-            font-size: 17px;
-            font-weight: 700;
-            color: #1a1a2e;
-        }
-
-        .product-variant {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 8px;
-            padding: 8px 0;
-            border-bottom: 1px dashed #ddd;
-        }
-
-        .product-variant:last-child {
-            border-bottom: none;
-        }
-
-        .variant-detail {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .variant-price {
-            font-size: 16px;
-            font-weight: 700;
-            color: #e74c3c;
-        }
-
-        .variant-qty {
-            font-size: 13px;
-            color: #666;
-        }
-
-        .btn-order {
-            background: #25d366;
-            color: white;
-            border: none;
-            padding: 6px 16px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 14px;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        .btn-order:hover {
-            background: #1da851;
-            transform: scale(1.02);
-        }
-
-        .checkout-section {
-            margin: 20px 16px 0;
-            padding: 16px;
-            background: #1a1a2e;
-            border-radius: 16px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: white;
-        }
-
-        .checkout-section .total-label {
-            font-size: 14px;
-            opacity: 0.8;
-        }
-
-        .checkout-section .total-price {
-            font-size: 22px;
-            font-weight: 700;
-        }
-
-        .btn-checkout {
-            background: #25d366;
-            color: white;
-            border: none;
-            padding: 12px 28px;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 16px;
-            cursor: pointer;
-            transition: 0.2s;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-checkout:hover {
-            background: #1da851;
-            transform: scale(1.02);
-        }
-
-        .footer {
-            text-align: center;
-            padding: 16px;
-            font-size: 12px;
-            color: #999;
-            border-top: 1px solid #eee;
-            margin-top: 20px;
-        }
-
-        @media (max-width: 400px) {
-            .product-variant {
-                flex-wrap: wrap;
-                gap: 8px;
-            }
-            .btn-order {
-                width: 100%;
-                text-align: center;
-            }
-            .checkout-section {
-                flex-wrap: wrap;
-                gap: 12px;
-                justify-content: center;
-                text-align: center;
-            }
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DB SELLER INDONESIA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
-    <div class="container">
+<body class="bg-slate-950 text-white font-sans">
 
-        <!-- HEADER TOKO - ALAMAT SEKARANG "ALAMAT SECRET" -->
-        <div class="store-header">
-            <h1>DB Seller Indonesia</h1>
-            <div class="sub">📍 ALAMAT SECRET</div>
-            <div class="info">
-                <span>🕒 08:00 - 17:00</span>
-                <span>📞 62-89646622901</span>
-            </div>
+    <!-- Navbar -->
+    <header class="border-b border-white/10 bg-slate-900/80 backdrop-blur p-4 sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-bold tracking-wider text-green-400">DB SELLER INDONESIA</h1>
+            <a href="https://wa.me/6289604340789?text=Halo%20DB%20SELLER%20INDONESIA%2C%20saya%20ingin%20memesan%3A%20DATA%20BASE%20FRESSSHH.%20Pastikan%20data%20fresh%20dan%20amanah%20ya%20bang%21" class="bg-green-500 text-slate-950 px-4 py-2 rounded-xl font-bold text-sm flex items-center gap-2">
+                <i class="fa-brands fa-whatsapp text-lg"></i> Chat Admin
+            </a>
         </div>
+    </header>
 
-        <!-- DAFTAR PRODUK -->
-        <div class="section-title">📦 DAFTAR PRODUK</div>
-        <div class="product-list">
+    <!-- Hero -->
+    <section class="max-w-4xl mx-auto px-4 py-12 text-center">
+        <span class="bg-green-500/10 text-green-400 text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider">100% Fresh & Valid</span>
+        <h2 class="text-3xl md:text-5xl font-extrabold mt-4 mb-6">Pusat Database Terlengkap & Amanah</h2>
+        <p class="text-slate-400 text-sm md:text-base max-w-xl mx-auto">Dapatkan produk database berkualitas tinggi untuk melesatkan penjualan bisnis Anda sekarang juga.</p>
+    </section>
 
-            <!-- PRODUK 1: 30 PCS -->
-            <div class="product-card" data-name="DATA BASE FRESSSHH" data-price="75000" data-qty="30 PCS">
-                <div class="product-name">DATA BASE FRESSSHH</div>
-                <div class="product-variant">
-                    <div class="variant-detail">
-                        <span class="variant-price">Rp 75.000</span>
-                        <span class="variant-qty">30 PCS GAMBAR/FOTO</span>
+    <!-- Katalog -->
+    <section class="max-w-4xl mx-auto px-4 py-6">
+        <h3 class="text-xl font-bold mb-6 text-center md:text-left"><i class="fa-solid fa-layer-group text-green-400 mr-2"></i> Katalog Produk Utama</h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Produk Utama -->
+            <div class="bg-slate-900 border border-white/10 p-6 rounded-2xl flex flex-col justify-between">
+                <div>
+                    <span class="text-xs text-green-400 font-bold uppercase block mb-1">Rekomendasi</span>
+                    <h4 class="text-2xl font-bold mb-3">DATA BASE FRESSSHH</h4>
+                    <p class="text-slate-400 text-sm mb-6">Database terbaru yang divalidasi ketat. Tanpa duplikat, siap pakai untuk telemarketing atau kempen bisnis.</p>
+                </div>
+                <div>
+                    <div class="mb-4">
+                        <span class="text-xs text-slate-500 line-through">Rp 899.000</span>
+                        <p class="text-2xl font-black text-white">Rp 249.000</p>
                     </div>
-                    <button class="btn-order" onclick="orderProduct(this)">PESAN</button>
+                    <a href="https://wa.me/6289604340789?text=Halo%20DB%20SELLER%20INDONESIA%2C%20saya%20ingin%20memesan%3A%20DATA%20BASE%20FRESSSHH.%20Pastikan%20data%20fresh%20dan%20amanah%20ya%20bang%21" target="_blank" class="w-full text-center bg-green-500 hover:bg-green-600 text-slate-950 font-bold py-3 px-4 rounded-xl block transition-all">
+                        <i class="fa-brands fa-whatsapp mr-2 text-lg"></i> Pesan Via WhatsApp
+                    </a>
                 </div>
             </div>
 
-            <!-- PRODUK 2: 50 PCS -->
-            <div class="product-card" data-name="DATA BASE FRESSSHH" data-price="125000" data-qty="50 PCS">
-                <div class="product-name">DATA BASE FRESSSHH</div>
-                <div class="product-variant">
-                    <div class="variant-detail">
-                        <span class="variant-price">Rp 125.000</span>
-                        <span class="variant-qty">50 PCS GAMBAR/FOTO</span>
+            <!-- Produk Tambahan -->
+            <div class="bg-slate-900 border border-white/10 p-6 rounded-2xl flex flex-col justify-between">
+                <div>
+                    <span class="text-xs text-blue-400 font-bold uppercase block mb-1">Kategori Bisnis</span>
+                    <h4 class="text-2xl font-bold mb-3">Database Kontak UKM</h4>
+                    <p class="text-slate-400 text-sm mb-6">Ribuan kontak pemilik usaha aktif di kota-kota besar untuk penawaran produk B2B/jasa.</p>
+                </div>
+                <div>
+                    <div class="mb-4">
+                        <span class="text-xs text-slate-500 line-through">Rp 599.000</span>
+                        <p class="text-2xl font-black text-white">Rp 199.000</p>
                     </div>
-                    <button class="btn-order" onclick="orderProduct(this)">PESAN</button>
+                    <a href="https://wa.me/6289604340789?text=Halo%20DB%20SELLER%20INDONESIA%2C%20saya%20ingin%20memesan%3A%20DATA%20BASE%20FRESSSHH.%20Pastikan%20data%20fresh%20dan%20amanah%20ya%20bang%21" target="_blank" class="w-full text-center bg-green-500 hover:bg-green-600 text-slate-950 font-bold py-3 px-4 rounded-xl block transition-all">
+                        <i class="fa-brands fa-whatsapp mr-2 text-lg"></i> Pesan Via WhatsApp
+                    </a>
                 </div>
             </div>
-
         </div>
+    </section>
 
-        <!-- CHECKOUT / PESAN SEKARANG -->
-        <div class="checkout-section">
-            <div>
-                <div class="total-label">Total Harga</div>
-                <div class="total-price" id="totalPrice">Rp 0</div>
+    <!-- Alamat Sydney & Kontak -->
+    <section class="max-w-4xl mx-auto px-4 py-12 border-t border-white/10 mt-12">
+        <div class="bg-slate-900 p-6 rounded-2xl border border-white/10">
+            <h3 class="text-lg font-bold mb-4"><i class="fa-solid fa-map-location-dot text-green-400 mr-2"></i> Kontak & Alamat Resmi</h3>
+            <div class="space-y-3 text-sm text-slate-300">
+                <p><strong class="text-white block text-xs uppercase tracking-wider text-slate-500">Alamat Kantor:</strong> George Street, Sydney NSW 2000, Australia</p>
+                <p><strong class="text-white block text-xs uppercase tracking-wider text-slate-500">WhatsApp:</strong> 089604340789</p>
+                <p><strong class="text-white block text-xs uppercase tracking-wider text-slate-500">Status Admin:</strong> <span class="text-green-400">● Online (Siap Kirim Instan)</span></p>
             </div>
-            <a href="#" class="btn-checkout" id="whatsappBtn">PESAN SEKARANG</a>
         </div>
+    </section>
 
-        <div class="footer">© 2026 DB Seller Indonesia</div>
-    </div>
+    <!-- Footer -->
+    <footer class="text-center p-6 text-xs text-slate-600 border-t border-white/5">
+        <p>&copy; 2026 DB SELLER INDONESIA. Sydney, Australia. All Rights Reserved.</p>
+    </footer>
 
-    <script>
-        let cart = [];
-
-        function orderProduct(btn) {
-            const card = btn.closest('.product-card');
-            const name = card.dataset.name;
-            const price = parseInt(card.dataset.price);
-            const qty = card.dataset.qty;
-
-            const existing = cart.find(item => item.price === price && item.qty === qty);
-            if (existing) {
-                existing.qtyOrder = (existing.qtyOrder || 1) + 1;
-            } else {
-                cart.push({
-                    name: name,
-                    price: price,
-                    qty: qty,
-                    qtyOrder: 1
-                });
-            }
-            updateTotal();
-        }
-
-        function updateTotal() {
-            let total = 0;
-            let message = 'Halo DB Seller Indonesia, saya ingin memesan:%0A';
-
-            cart.forEach((item, idx) => {
-                const subTotal = item.price * (item.qtyOrder || 1);
-                total += subTotal;
-                message += `%0A${idx+1}. ${item.name} - ${item.qty} - ${item.qtyOrder} pcs = Rp ${subTotal.toLocaleString()}`;
-            });
-
-            message += `%0A%0ATotal: Rp ${total.toLocaleString()}`;
-            message += `%0A%0Aterima kasih.`;
-
-            document.getElementById('totalPrice').innerText = `Rp ${total.toLocaleString()}`;
-
-            const waBtn = document.getElementById('whatsappBtn');
-            const phone = '6289604340789';
-            waBtn.href = `https://wa.me/${phone}?text=${message}`;
-
-            if (cart.length === 0) {
-                waBtn.style.opacity = '0.5';
-                waBtn.style.pointerEvents = 'none';
-            } else {
-                waBtn.style.opacity = '1';
-                waBtn.style.pointerEvents = 'auto';
-            }
-        }
-
-        updateTotal();
-    </script>
 </body>
 </html>
